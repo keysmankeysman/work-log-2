@@ -1,6 +1,6 @@
-let btnStatus = document.querySelector('#btn-status'),
-	btnName = document.querySelector('#btn-name'),
+let btnName = document.querySelector('#btn-name'),
 	allWorkers = document.querySelectorAll('.table-worker'),
+	inputSearch = document.querySelector('#searchByName'),
 	// checkboxes = document.querySelectorAll('input[name="status"]:checked');
 	checkboxes = document.querySelectorAll('input[name="status"]');
 
@@ -76,10 +76,33 @@ function showAllTableBody () {
 // 	})
 // })
 btnName.addEventListener('click', () => {
+	if (inputSearch.value) {
+		allWorkers.forEach(worker => {
+			// let innerCaption = worker.querySelector('.table-caption')
+			let innerCaptionHTML = worker.querySelector('.table-caption').innerHTML
+			if (innerCaptionHTML.includes(inputSearch.value)) {
+				worker.classList.add('hidden')
+			}
 
+            // body.classList.add('hidden')
+			// let innerBody = el.querySelectorAll('.table-body')
+			// innerBody.forEach((body) => {
+			// 	if (body.querySelector('.table-body__status').innerHTML === statuses[value]) {
+			// 		console.log('класс добавлен')
+			// 		body.classList.add('hidden')
+			// 	}
+			// })
+		})
+	} else {
+
+	}
 })
 
 
+// inputSearch.addEventListener('change', (event) => {
+// 	console.log('изменилось')
+// 	console.log(event)
+// })
 
 	
 
