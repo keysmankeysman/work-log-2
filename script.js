@@ -1,5 +1,3 @@
-console.log('script.js')
-
 let btnStatus = document.querySelector('#btn-status'),
 	btnName = document.querySelector('#btn-name'),
 	allWorkers = document.querySelectorAll('.table-worker'),
@@ -17,12 +15,25 @@ checkboxes.forEach(checkbox => {
 			selectedStatuses.splice(index, 1)
 		} else {
 			selectedStatuses.push(checkbox.value)
+			filterStatus(checkbox.value) 
 		}
 	})
 })
 
 function filterStatus(value) {
+	console.log('filterStatus')
+	console.log(value)
 
+	allWorkers.forEach(el => {
+		let innerBody = el.querySelectorAll('.table-body')
+		innerBody.forEach((body) => {
+			console.log(body.querySelector('.table-body__status').innerHTML)
+			// if (body.querySelector('.table-body__status').innerHTML === value) {
+			// 	console.log('класс добавлен')
+			// 	body.classList.add('hidden')
+			// }
+		})
+	})
 }
 
 // 	allWorkers.forEach(el => {
