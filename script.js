@@ -94,9 +94,15 @@ btnName.addEventListener('click', () => {
 			// })
 		})
 	} else {
-
+		showAllWorkers()
 	}
 })
+
+function showAllWorkers () {
+	allWorkers.forEach(worker => {
+		worker.classList.remove('hidden')
+	})
+}
 
 
 // inputSearch.addEventListener('change', (event) => {
